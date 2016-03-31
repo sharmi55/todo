@@ -1,0 +1,7 @@
+<% @lists.each do |list| %>
+  <h2><%= list.title %></h2>
+  <div><%= list.body %></div>
+<br>
+<%= link_to "Read List", list %>
+
+<% end %>

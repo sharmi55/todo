@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
   get 'welcome/about'
 
-  root 'welcome#index'
+  root 'lists#index'
+
+resources :items
+
+resources :users
+
+resources :lists
+
+namespace :api do
+  namespace :v1 do
+    resources :users, only: [:index, :show, :create, :update]
+    resources :lists, only: [:index, :show]
+  end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
