@@ -12,13 +12,13 @@ class Api::UsersController < ApiController
     if user.save
       render json: user, each_serializer: UserSerializer
     else
-      render json: { errors: user.errors.full_messages }, status: 422
+      render json: { errors: user.errors.full_messages }, each_serializer: UserSerializer
     end
   end
 
 private
-
   def user_params
     prams.require(:ser).permit(:email, :password)
   end
+
 end
