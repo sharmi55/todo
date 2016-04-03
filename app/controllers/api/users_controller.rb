@@ -1,4 +1,4 @@
-class Api::UsersController < ApiController
+class Api::UsersController < Api::ApiController
 
   before_action :authenticated?
 
@@ -7,5 +7,4 @@ class Api::UsersController < ApiController
     render json: users, each_serializer: UserSerializer
   end
 
-  
 end
