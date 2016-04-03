@@ -4,14 +4,12 @@ Rails.application.routes.draw do
 
   root 'lists#index'
 
-    resources :items
-#    resources :users
-    resources :lists
 
-    namespace :api, defaults: { format: :json } do
-#      namespace :v1 do
-        resources :users
-#        resources :lists, only: [:index, :show]
-      end
-#    end
+    resources :lists do
+      resources :items
+    end
+
+  namespace :api, defaults: { format: :json } do
+    resources :users
+  end
 end
