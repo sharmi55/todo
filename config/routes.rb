@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-#  get 'welcome/about'
-#  root 'lists#index'
+  get 'welcome/about'
+ root 'lists#index'
 
 
   resources :lists do
