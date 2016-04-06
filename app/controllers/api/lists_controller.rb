@@ -1,6 +1,10 @@
 class Api::ListsController < ApiController
   before_action :authenticated?
 
+  def index
+    lists = user.lists
+  end
+
   def create
     list = List.new(list_params)
     list.user_id = params[:user_id]
