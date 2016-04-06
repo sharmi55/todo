@@ -4,6 +4,7 @@ class Api::ListsController < ApiController
   def create
     list = List.new(list_params)
     list.user_id = params[:user_id]
+
     if list.save
       render json: list
     else
