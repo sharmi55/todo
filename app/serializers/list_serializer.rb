@@ -1,15 +1,13 @@
 class ListSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :title, :body
+  attributes :id, :created_at, :name,
 
-  def title
-    object.title
-  end
 
-  def body
-    object.body
+  def name
+    object.name
   end
 
   def created_at
     object.created_at.strftime('%B %d, %Y')
   end
+
 end
