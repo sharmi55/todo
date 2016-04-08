@@ -1,13 +1,6 @@
 class ListSerializer < ActiveModel::Serializer
-  attributes :id, :created_at, :name,  :title, :body, :user_id
+  attributes :id, :created_at, :name,
 
-  def title
-    object.title
-  end
-
-  def body
-    object.body
-  end
 
   def name
     object.name
